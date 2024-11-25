@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="services-container">
+    <div class="services-info">
+        <div class="heading-container">
+            <h1>Our Services</h1>
+            <div class="heading-underline"></div>
+        </div>
+        <div class="services-items">
+            <div class="services-item">
+                <i class="fas fa-car"></i>
+                <div>
+                    <h3>Vehicle Number Plate Detection</h3>
+                    <p>Identifying the vehicle's number plate from high-resolution images or video feeds.</p>
+                </div>
+            </div>
+            <div class="services-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3>Location Identification</h3>
+                    <p>Determining the state or region where the vehicle is registered.</p>
+                </div>
+            </div>
+            <div class="services-item">
+                <i class="fas fa-database"></i>
+                <div>
+                    <h3>Vehicle Information</h3>
+                    <p>Providing access to additional information, such as the vehicle's make, model, and registration year.</p>
+                </div>
+            </div>
+            <div class="services-item">
+                <i class="fas fa-chart-line"></i>
+                <div>
+                    <h3>Database Integration</h3>
+                    <p>Offering seamless integration with databases for law enforcement, parking management, and toll systems.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta">
+        <a href="contact.html">Contact Us for More Details</a>
+    </div>
+</div>
+
+<style>
+    /* Apply consistent styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        /* Make sure the background applies to the entire page */
+        background-image: url('https://images.unsplash.com/photo-1518397387277-a52b09640f62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1771');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        color: #fff;
+        min-height: 100vh; /* Ensure the body height covers the full page */
+    }
+
+    .services-container {
+        display: flex;
+        background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for readability */
+        padding: 40px;
+        border-radius: 15px;
+        width: 80%;
+        margin: 50px auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        flex-direction: column;
+    }
+
+    .services-info {
+        flex: 1;
+    }
+
+    .heading-container h1 {
+        font-size: 2.8em;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #fff; /* Ensure the header is visible */
+    }
+
+    .heading-container .heading-underline {
+        width: 80px;
+        height: 4px;
+        background: #ff5e62;
+        margin: 0 auto;
+        border-radius: 2px;
+    }
+
+    .services-items {
+        margin-top: 30px;
+    }
+
+    .services-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .services-item i {
+        font-size: 1.5em;
+        color: #ff5e62;
+        margin-right: 15px;
+    }
+
+    .services-item h3 {
+        font-size: 1.4em;
+        margin-bottom: 5px;
+    }
+
+    .services-item p {
+        font-size: 1.1em;
+    }
+
+    .cta {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .cta a {
+        text-decoration: none;
+        color: #fff;
+        background: linear-gradient(135deg, #ff5e62, #ff9966);
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-size: 1.2em;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    .cta a:hover {
+        background: linear-gradient(135deg, #ff9966, #ff5e62);
+        box-shadow: 0 5px 15px rgba(255, 94, 98, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .services-container {
+            width: 90%;
+            padding: 30px;
+        }
+
+        .heading-container h1 {
+            font-size: 2.2em;
+        }
+
+        .services-item h3 {
+            font-size: 1.2em;
+        }
+
+        .services-item p {
+            font-size: 1em;
+        }
+
+        .cta a {
+            font-size: 1em;
+            padding: 10px 25px;
+        }
+    }
+</style>
+
+{% endblock %}

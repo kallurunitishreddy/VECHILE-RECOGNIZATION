@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="messages">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<div class="login-container">
+    <h1>Vehicle Number Plate Detection</h1>
+    <p>{{ prediction }}</p>
+    <a href="{% url 'upload_image' %}" class="btn">Upload another image</a>
+    <a href="{% url 'login' %}" class="btn logout-btn">Logout</a>
+</div>
+
+<style>
+    /* Global styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        min-height: 100vh;
+
+        /* Background image styles */
+        background-image: url('https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    /* Navbar styles */
+    .navbar {
+        width: 100%;
+        background-color: rgba(51, 51, 51, 0.8);
+        padding: 10px 0;
+    }
+    .navbar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .navbar ul li {
+        margin: 0 15px;
+    }
+    .navbar ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+    .navbar ul li a:hover {
+        color: #ff5e62;
+    }
+
+    /* Message styles */
+    .messages {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .message {
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 5px 0;
+    }
+    .message.success {
+        background-color: #d4edda;
+        color: #155724;
+    }
+    .message.error {
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+
+    /* Login container styles */
+    .login-container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        width: 350px;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        color: #333;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    .btn {
+        display: inline-block;
+        width: 100%;
+        background: linear-gradient(135deg, #ff5e62, #ff9966);
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1em;
+        text-decoration: none;
+        text-align: center;
+        transition: background 0.3s, transform 0.2s;
+        margin-top: 15px;
+    }
+
+    .btn:hover {
+        background: linear-gradient(135deg, #ff9966, #ff5e62);
+        transform: scale(1.05);
+    }
+
+    .logout-btn {
+        background-color: #d9534f; /* Red color for logout */
+        background: linear-gradient(135deg, #ff6f61, #d9534f);
+    }
+
+    .logout-btn:hover {
+        background: linear-gradient(135deg, #d9534f, #ff6f61);
+    }
+</style>
+{% endblock %}

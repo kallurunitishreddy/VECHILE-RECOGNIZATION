@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="contact-container">
+    <div class="contact-info">
+        <div class="heading-container">
+            <h1>Get In Touch</h1>
+            <div class="heading-underline"></div>
+        </div>
+        <div class="info-items">
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3>Address</h3>
+                    <p>123 Tech Street, Silicon Valley, CA 94025</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h3>Phone</h3>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>Email</h3>
+                    <p>support@numberplateai.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <div class="heading-container">
+            <h2>Send us a Message</h2>
+            <div class="heading-underline"></div>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Apply consistent styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url('https://images.pexels.com/photos/3602154/pexels-photo-3602154.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .heading-container h1,
+    .heading-container h2 {
+        font-size: 2.5em;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .heading-underline {
+        height: 3px;
+        width: 50px;
+        background: #ff5e62;
+        margin: 10px auto;
+    }
+
+    .contact-container {
+        display: flex;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        width: 80%;
+        max-width: 1200px;
+        margin: 20px auto;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+
+    .contact-info {
+        background: linear-gradient(135deg, #ff5e62, #ff9966);
+        color: white;
+        padding: 30px;
+        flex: 1;
+    }
+
+    .info-items {
+        margin-top: 20px;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .info-item i {
+        font-size: 1.5em;
+        margin-right: 15px;
+    }
+
+    .info-item h3 {
+        margin: 0;
+        font-size: 1.1em;
+    }
+
+    .info-item p {
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    .contact-form {
+        padding: 30px;
+        flex: 2;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1em;
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .form-group textarea {
+        height: 120px;
+    }
+
+    .btn {
+        background: linear-gradient(135deg, #ff5e62, #ff9966);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    .btn:hover {
+        background: linear-gradient(135deg, #ff9966, #ff5e62);
+    }
+
+    @media (max-width: 768px) {
+        .contact-container {
+            flex-direction: column;
+            width: 90%;
+        }
+
+        .contact-info,
+        .contact-form {
+            flex: unset;
+            width: 100%;
+        }
+    }
+</style>
+{% endblock %}
